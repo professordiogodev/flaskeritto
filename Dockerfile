@@ -4,9 +4,6 @@ FROM python:3.11-slim
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Set environment variables for Flask
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
 ENV PORT=5000
 
 # Copy dependency files and install them
@@ -20,4 +17,4 @@ COPY . ./
 EXPOSE ${PORT}
 
 # Command to run the application
-CMD ["flask", "run"]
+CMD ["python", "app.py"]
